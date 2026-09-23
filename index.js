@@ -33,10 +33,14 @@ export function echo(word, n) {
  */
 export function echoWithSpace(word, n) {
   // TODO
+  if (word.length == 0 || n <= 0) {
+    return "";
+  }
   let result = "";
-  for (let i = 0; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     result += word + " ";
   }
+  result += word;
   return result;
 }
 
@@ -169,7 +173,7 @@ export function getGrowthTime(start, target) {
  */
 export function getCompoundTime(start, rate, target) {
   // TODO
-  if (start <= 0) {
+  if (start <= 0 || rate <= 0) {
     return undefined;
   }
 
